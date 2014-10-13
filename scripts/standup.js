@@ -25,12 +25,12 @@ module.exports = function(robot) {
 
     // Constants.
     var STANDUP_MESSAGES = [
-        "Standup time!",
-        "Time for standup, you guys.",
-        "It's standup time once again!",
-        "Get up, stand up (it's time for our standup)",
-        "Standup time. Get up, humans",
-        "Standup time! Now! Go go go!"
+        "@all Standup time!",
+        "@all Time for standup, you guys.",
+        "@all It's standup time once again!",
+        "@all Get up, stand up (it's time for our standup)",
+        "@all Standup time. Get up, humans",
+        "@all Standup time! Now! Go go go!"
     ];
 
     // Check for standups that need to be fired, once a minute
@@ -164,7 +164,7 @@ module.exports = function(robot) {
     robot.respond(/create standup ([0-5]?[0-9]:[0-5]?[0-9])$/i, function(msg) {
         var time = msg.match[1];
 
-        // NOTE: This works for Hipchat. You may need to change this line to 
+        // NOTE: This works for Hipchat. You may need to change this line to
         // match your adapter. 'room' must be saved in a format that will
         // work with the robot.messageRoom function.
         var room = msg.envelope.user.reply_to;
